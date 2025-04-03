@@ -40,7 +40,3 @@ print(user.is_adult())
 john = Hero(lvl = 123)
 john.introduce()
 print(john.is_adult())
-
-doe = Hero()
-doe.introduce()
-print(doe.is_adult())
