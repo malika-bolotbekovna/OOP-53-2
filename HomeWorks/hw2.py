@@ -1,7 +1,6 @@
 counter = 0
 
 class Heroes:
-    
 
     def __init__(self, name = None, hp = 100, magical_attacks = None):
         global counter
