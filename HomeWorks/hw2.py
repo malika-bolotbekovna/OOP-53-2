@@ -39,13 +39,13 @@ class Heroes:
                         magics.append(magic)
                 print(f'your magical attacks: {magics}\n')
                 choice = input('choose your magical attack: ')
-                if choice == 'water' == self.magical_attacks[0]:
+                if choice == 'water' and 'water' in self.magical_attacks:
                     print('tsunami wave\n')
-                elif choice == 'stone' == self.magical_attacks[1]:
+                elif choice == 'stone' and 'stone' in self.magical_attacks:
                     print('stone spikes\n')
-                elif choice == 'fire' == self.magical_attacks[2]:
+                elif choice == 'fire' and 'fire' in self.magical_attacks:
                     print('fireball\n')
-                elif choice == 'air' == self.magical_attacks[3]:
+                elif choice == 'air' and 'air' in self.magical_attacks:
                     print('wind barrier\n')
                 else:
                     print("you don't have that kind of magic!\n")
@@ -60,14 +60,8 @@ class Heroes:
 count = 0
 
 class Archer(Heroes):
-    def __init__(self, name = None, hp = 100, arrows = 3, precision = 5):
-        global count
-        if name is None:
-            self.name = 'user' + str(count)
-            count += 1
-        else:
-            self.name = name
-        self.hp = hp
+    def __init__(self, name = None, hp = 100, arrows = 3, precision = 0):
+        super().__init__(name, hp)
         self.arrows = arrows
         self.precision = precision
 
@@ -90,16 +84,17 @@ class Archer(Heroes):
             
 
 
-nanu = Heroes('nanuku')
-nanu.action()
-nanu.attack()
+# nanu = Heroes('nanuku')
+# nanu.action()
+# nanu.attack()
 
 # oti = Heroes(magical_attacks=[None, None,'fire', 'air'])
 # oti.action()
 # oti.attack()
 
-# mani = Archer('mani')
+# mani = Archer('mani', precision = 3)
 # mani.action()
 # mani.attack()
+# print(mani.status())
 # mani.rest()
-# mani.status()
+# print(mani.status())
