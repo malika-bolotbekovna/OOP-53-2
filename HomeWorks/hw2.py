@@ -13,7 +13,6 @@ class Heroes:
         self.hp = hp
         self.magical_attacks = magical_attacks
 
-
     def action(self):
         print(f"{self.name} performs an action.\n")
 
