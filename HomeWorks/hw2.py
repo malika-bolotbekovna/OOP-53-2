@@ -92,7 +92,7 @@ class Archer(Heroes):
 
 nanu = Heroes('nanuku')
 nanu.action()
-# nanu.attack()
+nanu.attack()
 
 # oti = Heroes(magical_attacks=[None, None,'fire', 'air'])
 # oti.action()
