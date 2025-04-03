@@ -1,0 +1,154 @@
+# counter = 0
+
+# class Hero:
+    
+
+#     def __init__(self, name = None, lvl = 1, hp = 100):
+#         global counter
+#         if name is None:
+#             self.name = 'user' + str(counter)
+#             counter += 1
+#         else:
+#             self.name = name
+
+#         self.lvl = lvl
+#         self.hp = hp
+
+
+#     def introduce(self):
+#         print(f'Привет, меня зовут {self.name}, мой уровень {self.lvl}, мой hp {self.hp}')
+
+
+#     def is_adult(self):
+#         return self.lvl >= 10
+
+
+# kirito = Hero(lvl = 90, name = 'Kirito', hp = 1000)
+# kirito.introduce()
+# print(kirito.is_adult())
+
+
+# mani = Hero(lvl = 9, name = 'Mani', hp = 1000)
+# mani.introduce()
+# print(mani.is_adult())
+
+
+# user = Hero( hp = 400)
+# user.introduce()
+# print(user.is_adult())
+
+# ktoto = Hero(lvl = 123)
+# ktoto.introduce()
+# print(ktoto.is_adult())
+
+# me = Hero()
+# me.introduce()
+# print(me.is_adult())
+
+
+
+counter = 0
+
+class Heroes:
+    
+
+    def __init__(self, name = None, hp = 100, magical_attacks = None):
+        global counter
+        if name is None:
+            self.name = 'user' + str(counter)
+            counter += 1
+        else:
+            self.name = name
+
+        self.hp = hp
+        self.magical_attacks = magical_attacks
+
+
+    def action(self):
+        print(f"{self.name} performs an action.\n")
+
+    def attack(self):
+        attacks=['basic attack', 'charged attack','magical attack', 'poisonous attack', 'life-stealing attack']
+        print(attacks)
+        choice = input("choose an attack:")
+        if choice == attacks[0]:
+            print('the opponent is kicked!\n')
+        elif choice == attacks[1]:
+            import time
+            print('the attack is charging up...')
+            time.sleep(3)
+            print('the opponent is punched!\n')
+        elif choice == attacks[2]:
+            if self.magical_attacks is None:
+                print('you have no magic!\n')
+            else:
+                magics = []
+                for magic in self.magical_attacks:
+                    if magic is not None:
+                        magics.append(magic)
+                print(f'your magical attacks: {magics}\n')
+                choice = input('choose your magical attack: ')
+                if choice == 'water' == self.magical_attacks[0]:
+                    print('tsunami wave\n')
+                elif choice == 'stone' == self.magical_attacks[1]:
+                    print('stone spikes\n')
+                elif choice == 'fire' == self.magical_attacks[2]:
+                    print('fireball\n')
+                elif choice == 'air' == self.magical_attacks[3]:
+                    print('wind barrier\n')
+                else:
+                    print("you don't have that kind of magic!\n")
+        elif choice == attacks[3]:
+            print('the opponent was poisoned\n')
+        elif choice == attacks[4]:
+            print('200hp is stolen\n')
+            self.hp += 200
+        else:
+            print("you don't have that kind of attack!\n")
+
+count = 0
+
+class Archer(Heroes):
+    def __init__(self, name = None, hp = 100, arrows = 3, precision = 5):
+        global count
+        if name is None:
+            self.name = 'user' + str(count)
+            count += 1
+        else:
+            self.name = name
+        self.hp = hp
+        self.arrows = arrows
+        self.precision = precision
+
+    def attack(self):
+        print('The shot was fired!\n')
+        self.arrows -= 1
+        if self.precision >= 5:
+            print('successful shot!\n')
+        else:
+            print('missed shot!\n')
+
+    def rest(self):
+        self.arrows += 5
+        print(f'arrows are replenished. quantity of arrows: {self.arrows}\n')
+
+    def status(self):
+        heros_status = f'name: {self.name}, hp: {self.hp}, arrows: {self.arrows}, precision: {self.precision}\n'
+        return heros_status
+
+            
+
+
+nanu = Heroes('nanuku')
+nanu.action()
+# nanu.attack()
+
+# oti = Heroes(magical_attacks=[None, None,'fire', 'air'])
+# oti.action()
+# oti.attack()
+
+# mani = Archer('mani')
+# mani.action()
+# mani.attack()
+# mani.rest()
+# mani.status()

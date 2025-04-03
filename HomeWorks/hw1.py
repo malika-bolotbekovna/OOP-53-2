@@ -1,6 +1,7 @@
 counter = 0
 
 class Hero:
+    
 
     def __init__(self, name = None, lvl = 1, hp = 100):
         global counter
@@ -36,10 +37,10 @@ user = Hero( hp = 400)
 user.introduce()
 print(user.is_adult())
 
-ktoto = Hero(lvl = 123)
-ktoto.introduce()
-print(ktoto.is_adult())
+john = Hero(lvl = 123)
+john.introduce()
+print(john.is_adult())
 
-me = Hero()
-me.introduce()
-print(me.is_adult())
+doe = Hero()
+doe.introduce()
+print(doe.is_adult())
