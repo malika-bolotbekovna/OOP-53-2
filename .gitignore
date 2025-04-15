@@ -1,3 +1,5 @@
 __pycache__/
 tempCodeRunnerFile.py
 GitHelp.txt
+.venv
+.vscode
